@@ -1,0 +1,12 @@
+# Pull the new Image and Create a Container
+docker run -i -t --rm --name condaenv -p  8888:8888 youngjoon5/condajupyter /bin/bash
+
+# Run Jupyter notebook
+jupyter notebook --notebook-dir=/opt/notebooks --ip='*' --port=8888  --no-browser --allow-root
+
+
+docker run -i -t --rm --name condaenv -u 0 -v ~/volume:/home/jupyter -p  8888:8888 jupyter1 /bin/bash
+
+sudo docker run -i -t --rm --name condaenv -u 0 -v ~/volume:/home/jupyter -p  8888:8888 jupyter1
+
+docker run -i -t --rm --name condaenv -p  8888:8888 jupyter1
